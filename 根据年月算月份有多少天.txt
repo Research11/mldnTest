@@ -1,0 +1,16 @@
+String birthday = request.getParameter("birthday");
+		String[] str = birthday.split("-");
+		Calendar a = Calendar.getInstance(); 
+		a.set(Calendar.YEAR, Integer.parseInt(str[0]));  
+        a.set(Calendar.MONTH, Integer.parseInt(str[1]) - 1);  
+        a.set(Calendar.DATE, 1);  
+        a.roll(Calendar.DATE, -1);  
+        int maxDate = a.get(Calendar.DATE);  
+        String str1 = str[0]+"-"+str[1]+"-"+"1";
+        String str2 = str[0]+"-"+str[1]+"-"+String.valueOf(maxDate);
+        
+        
+        System.out.println(str1);
+        System.out.println(str2);        
+		System.out.println(maxDate);
+	}
