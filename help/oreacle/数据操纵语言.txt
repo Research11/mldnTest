@@ -1,0 +1,124 @@
+DML:数据操纵语言：oracle:sql:的常用函数：1.字符函数 2.数字函数 3.日期函数 4.转换函数 5.聚合函数
+非过程化的查询语言：只需要提出“做什么就就可以了”具体怎么做是由系统来完成的。（可以看成是客户端与服务器端的工具）。
+
+pl/sql:中的的注释用“--”
+
+insert的语法结构：
+插入特定时间：
+insert into student values(1,'zhangsan','zhangsan@126.com',TO_DATE('2013-1-2','yyyy-MM-dd'));
+
+插入当前系统时间：
+insert into student values(2,'lisi','lisi@126.com',sysdate);
+
+插入多行数据：
+insert into student1 select * from student （where条件可选，没有就是备份全部，弊端就是两个表的字段必须相等）
+
+插入带单引号的字段：
+insert into student values(5,'杨青青','yang''qingqing',sysdate);
+
+插入空值第一种方式：
+insert into student values(3,'lisisi',null,sysdate);
+插入空值第二种方式：
+insert into student(id,name,birthday)values(4,'张三丰'，sysdate);
+
+update的语法结构:
+修改所有学生的姓名为 zhangsan
+update student set name='zhangsna';
+
+修改编号为 1 的学生姓名为  李思思
+update student set name='李思思' where id=1;  
+
+修改多个字段：
+update student set name='李思思',email='lss@126.com' where id=1;
+
+select的用法：
+查询所有：
+select * from student
+
+查询所有name为 'zhangsan'的学生 的所有列
+
+select * from student where name='zhangsan';
+
+两个条件查询：
+
+select * from student where age=22 and name='zhangsan';
+
+select * from student where age=22 or name='zhangsan';
+
+select * from student where age=22 add (列名=‘’or 列名=‘’)；
+
+查询空值:
+
+select * from student where email is null;
+
+模糊查询
+select * from student where name like '李%';
+select * from student where  name like '李_';(%代表0-任意_代表一个字符)
+select * from student where name like '%李';
+select * from studnet where age between 22 and 25; 
+select * from student where age in (22,23,24,25);
+select * from student where name='张三' or name='李四' or name='王五';
+select * from student where name in ('张三','李四','王五');
+
+为表和字段取别名：
+select s.id as 学生编号，s.name as 姓名,s.age as 年龄,s.email as 邮箱 from student s where s.id=1;
+
+排序：
+升序排序：select s.id,s.name,s.email,s.birthday from student s order by s.birthday asc;
+降序排序:select s.id,s.name,s.email,s.biethday from student s order by s.birthday desc;
+
+查询无重复记录：select distinct * from student;(有外键的情况下)
+
+删除数据
+删除一条数据
+delete from student s where s.id=1;
+删除所有数据
+delete from student; 
+
+事物的提交回滚 commit rollback 
+
+字符函数：例：数据库中定义的时候是number类型的，但是展示的时候是字符，就要用到字符函数  concat函数就是字符串的链接 
+select s.id, s.name, concat(s.age,'岁'),s.birthday from student s;
+
+select id,name ,age || '岁',brithday from student(多字符串的链接)
+
+nvl函数：一般用来添加默认显示(此例是如果学生没有邮箱就会显示‘暂无详细信息’)。
+select id,name,nvl(email,'暂无详细信息')，birthday from student;
+ 
+数字函数：（常用的得有 trunc()截取函数 round()四舍五入）还可以操作时间类型。
+select trunc(45.926) from dual; 结果：45   （dual用来构成语法结构）
+select trunc(45.926,2) from dual;结果：45.92
+select trunc（45.926.-1）from dual;结果：40
+
+select round(45.926) from dual;结果：46
+select round(45.926,2) from dual;结果：45.93
+select round(45.926,-1) from dual;结果：50
+
+日期类型：sysdate(当前系统时间) extract(返回日期中的部分时间)
+select sysdate from dual;
+insert into studnet values(7,'zhaoliu'，'zhaoliu@126.com',sysdate,45.926);
+
+select extract(year from birthday) ||'-'|| extract(month from birthday) ||'-'||
+extract(day from birthday) from student
+转换函数：
+select to_char(birthday,'yyyy-mm-dd') from student;
+insert into student values(7,'zhaoliu'，'zhaoliu@126.com',to_date('2015-1-2','yyyy-mm-dd'),45.926);
+
+聚合函数：(sum,count,max) (此处的类别就是表中的外键)
+
+汇总每种类别下的商品总数量
+select 类别 sum(库存量) from student group by 类别；
+
+每类商品在商品表中的总记录数
+select 类别 count(name) from student group by 类别；
+
+汇总每类商品中的最贵的商品价格
+select 类别 max(pice) from student group by 类别；
+
+
+
+
+
+
+
+

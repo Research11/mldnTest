@@ -1,0 +1,37 @@
+1.数组是多个相同数据类型（可以是任意数据类型）数据的有序集合
+  数组也是集合，数组元素相当于对象的成员变量
+  数组长度不可变
+
+2.语法：数据类型[]数组名；数组名=new 数据类型[2]; 数据类型 数组名[]；
+数组名.length属性得到数组长度（从零开始）
+
+数组元素的初始值：byte short int long默认初始值为 0 float double 为0.0  char 默认值为 "\u0000" 引用数据类型为 null
+
+int [] num=new int[2];定义数组不需要指定长度，分配空间时需要指定长度，否则出现编译错误
+ 数组赋值 num[0]=45；
+
+3.数组内存分配：int [] num;此时在栈内存 num=new int[5];在堆内存分配空间，并将首地址付给num。所有方法中的变量都在栈内存中 
+
+ int num =new int[]{23,24,25};  int num={23,24,25};
+
+4. 数组的循环：
+String[]cityes=new String[]{"beijing","tianjing","shanghai"};
+
+for(int i=0;i<cityes.length;i++){
+  System.out.println(cityes[i]);
+}
+jdk1.5的新功能
+for(String city:cityes){	
+  System.out.println(city);	
+}
+
+5.Arrays类及其常用方法：（equals()比较两个数组是否相等 sort（）；对数组元素进行升序排序toString()将数组转换成一个字符串 file()就是把数组的所有元素都赋值为某个值 copyOf()复制数组 binarySearch()查询数组某个元素在数组中的下标（前提是已经进行了升序排序)）
+
+
+
+
+
+
+
+
+

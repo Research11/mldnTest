@@ -1,0 +1,34 @@
+1.java之所以流行的一个原因在于能够跨平台运行，之所以能够跨平台在于虚拟机（只有安装了虚拟机的电脑才能识别.class文件实现跨平台）
+jdk：是运行环境也是编译环境,jvm(java虚拟机)是编译环境。
+
+2.java的发展历史：（java之父是 jamesGosiling ）
+
+java的来历：本来是印度尼西亚的爪哇岛的名字也是爪哇岛生产咖啡的名字
+
+1995年java语言诞生，1996年jdk1.0发布，1998年jdk1.2发布随后java被分j2se,j2ee,j2me全面进军桌面，嵌入式企业级三个不同领域，2000年jdk1.31.4发布
+历史上最成熟的版本，2004年jdk1.5发布（为了表示其版本的重要性sun将其更名为jdk5.0）2006年jdk6发布也就是正式版。sun公司在2009年4月20日Oracle宣布以74亿美元收购sun,2010正式完成收购。
+
+javase 标准版桌面 javaee 企业级做网站 javame 嵌入式开发手机
+
+3.java程序运行过程：java程序--->编译器--->.class文件--->jvm(解释器)--->pc（java是编译型语言执行的过程）
+
+4.java的优势：跨平台  安全的  完全面向对象  简单的  健壮的
+
+5.java是在c++的基础上开发的取消了指针并且提供了自动内存管理机制（垃圾回收器）提供丰富类库
+
+6.java健壮性体现在：提供了强制类型转换机制，异常处理机制，垃圾自动回收
+
+7.jdk的安装过程：首先点击安装一直下一步等待(需要指定jre的安装目录)--->配置环境变量
+javac.exe(java的编译器) java.exe(java解释器)
+
+path：C:\Program Files\Java\jdk1.7.0\bin 确定
+
+classpath: .;C:\Program Files\Java\jdk1.7.0\lib\tools.jar;C:\Program Files\Java\jdk1.7.0\lib\dt.jar 确定
+
+8.eclipse是IBM的一个开源项目
+eclipse集成了：编辑 编译 解释 运行 调试等功能
+
+9.jdk中包含JRE,在jdk的安装目录下有一个名为jre的目录，里面有两个文件夹bin和lib,在这里可以认为bin里的就是jvm,lib中则是jvm工作所需的类库，而jvm和lib合起来就称为jer。 
+
+
+

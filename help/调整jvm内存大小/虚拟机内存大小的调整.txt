@@ -1,0 +1,5 @@
+1.在eclipse里调整jvm内存大小如下：
+
+类名上面：右键-->Run As-->Run Configuration...--->argument-->VM argument-->-Xmx80m (此时就将虚拟机的内存大小调整为80m了，虚拟机的内存大小默认为64m)
+
+2.

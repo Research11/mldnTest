@@ -1,0 +1,23 @@
+1.mybatis入门帮助网址：http://mybatis.org/mybatis-3/zh/dynamic-sql.html
+
+2.mybatis入门帮助第二章网址：http://mybatis.org/spring/zh/mappers.html
+
+3.在mybatis映射xml文件中并使用mysql数据库的分页查询：
+
+select p.* from(select e.*,@rownum:=@rownum+1 AS rn from (select * from (SELECT @rownum:=0) r, student order by birthday desc) e) p where rn>20 and rn &lt; 30
+
+注：mysql数据库并没有伪列一说，sysdate与TO_DATE('2013-1-2','yyyy-MM-dd')只适用于oreacle。
+
+mysql数据库插入当前系统时间用now()并且mysql数据类型没有varchar2类型
+
+4.mybatis：中的mapper配置文件的头文件
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+    PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+5.mybatis:中的mybatis-config.xml配置文件的头文件
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE configuration
+  PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-config.dtd">

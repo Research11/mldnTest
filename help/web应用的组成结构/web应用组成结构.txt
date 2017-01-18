@@ -1,0 +1,58 @@
+1.ÀýÈç£ºemail(webÓ¦ÓÃËùÔÚÄ¿Â¼)ÀïÃæ·Å£ºhtml,jsp,css,js WEB-INFÎÄ¼þµÈ
+WEB-INF:ÀïÃæ·Å£ºclasses(ÀïÃæÔÙ·Å£ºjavaÀà)£¬lib£¨ÀïÃæÔÙ·Å£ºjavaÔËÐÐËùÐèµÄjar°ü£©£¬web.xml(ÀïÃæÔÙ·Å£ºwebÓ¦ÓÃµÄÅäÖÃÎÄ¼þ)
+
+classesÀïÃæ·Å£ºservlet(¿ÉÒÔ´ò³Éjar°ü·ÅÔÚlibÄ¿Â¼ÏÂ)£¬.classÎÄ¼þ
+
+2.ÔÚweb.xmlÅäÖÃÎÄ¼þÀïÃæÅäÖÃÄ¬ÈÏÊ×Ò³£º
+
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!--
+  Licensed to the Apache Software Foundation (ASF) under one or more
+  contributor license agreements.  See the NOTICE file distributed with
+  this work for additional information regarding copyright ownership.
+  The ASF licenses this file to You under the Apache License, Version 2.0
+  (the "License"); you may not use this file except in compliance with
+  the License.  You may obtain a copy of the License at
+
+      http://www.apache.org/licenses/LICENSE-2.0
+
+  Unless required by applicable law or agreed to in writing, software
+  distributed under the License is distributed on an "AS IS" BASIS,
+  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  See the License for the specific language governing permissions and
+  limitations under the License.
+-->
+<web-app xmlns="http://java.sun.com/xml/ns/javaee"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://java.sun.com/xml/ns/javaee
+                      http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd"
+  version="3.0">
+
+<welcome-file-list>
+    <welcome-file>1.html</welcome-file>  //´Ë´¦ÊÇÖØµã
+    </welcome-file-list>
+
+</web-app>
+
+3.ÅäÖÃÈ±Ê¡£ºD:\Èí¼þ\apache-tomcat-7.0.50\conf\server.xml  »ò
+D:\Èí¼þ\apache-tomcat-7.0.50\conf\Catalina\localhost\ROOT.xmlÀïÃæÅäÖÃ£º
+
+<Context path="" docBase="D:\Èí¼þ\apache-tomcat-7.0.50\webapps\email"/>
+
+´ËÊ±·ÃÎÊÂ·¾¶Îª£ºhttp://localhost:8080/
+
+×¢£ºÒÔÉÏÊÇÔÚwebappsÏÂÃæµÄ²Ù×÷
+
+4.webÓ¦ÓÃÓë·þÎñÆ÷²»ÔÚÍ¬Ò»´ÅÅÌµÄÇé¿öÏÂ£º 
+D:\Èí¼þ\apache-tomcat-7.0.50\conf\server.xml  »ò
+D:\Èí¼þ\apache-tomcat-7.0.50\conf\Catalina\localhost\ROOT.xml ÀïÃæÅäÖÃ£º
+	<Context path="" docBase="c:\email"/>
+
+´ËÊ±·ÃÎÊÂ·¾¶Îª£ºhttp://localhost:8080/
+£¨3.4.ÊµÏÖÍ¬ÑùµÄÐ§¹û£©
+
+»¥ÁªÍøÉÏ³£ÓÃµÄÐ­ÒéÒÔ¼°¹¤×÷¶Ë¿Ú£º
+
+http  80  smpt 25  pop3 110  ftp 23  https 443
+
+

@@ -1,0 +1,11 @@
+<!--name=jdbc/news指的是数据库连接池的名称（数据源的JNDI（）的名字）
+    auth指的是数据库连接池的管理权限归谁所有（此时归容器所有）
+    maxActive指的是最大激活连接数（此时指的是同时有100个数据库链接）
+    maxldle指的是最大的空闲连接数
+    maxWait指的是最大等待毫秒数（此时为10s为-1时为无限等待）
+      -->
+	<Resource name="jdbc/news"
+			auth="Container" type="javax.sql.DataSource" 			maxActive="100"
+			maxldle="30" maxWait="10000" 			username="shop_dev_us" password="bdqn"
+			driverClassName="oracle.jdbc.OracleDriver"
+			url="jdbc:oracle:thin:@localhost:1521:ORCL"/>
