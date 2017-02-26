@@ -90,6 +90,14 @@ alter profile default limit password_life_time unlimited;   //修改default的profi
 
 
 
+--日期函数：日期 + 数字 = 日期     日期 - 数字 = 日期    日期 - 日期 = （天数）
+
+select SYSDATE+3 from dual
+
+SELECT SYSDATE-3 FROM dual
+
+select  round(SYSDATE - hiredate) 入职的天数,trunc(SYSDATE - hiredate) from emp -- round 是四舍五入 trunc 是直接去除小数部分
+
 
 
 
