@@ -80,13 +80,15 @@ select a.* from act_hi_actinst a inner join t_crt_policy b on a.proc_inst_id_=b.
 t_crt_customer c on b.policy_holder=c.id where a.assignee_='" + userId+"'
 
 
-数据库用户密码到期有提示：修改密码策略的sql语句(如果有了提示密码还是要修改，保持原来的就行)
+数据库用户密码到期有提示：修改密码策略的sql语句(如果有了提示密码还是要修改，保持原来的就行,链接：http://blog.itpub.net/26194851/viewspace-756394/)
 
 SELECT username,PROFILE FROM dba_users;  //查询该用户所使用的profile，如果没有特别设置，一般会是default：
 
 SELECT * FROM dba_profiles WHERE resource_name='PASSWORD_LIFE_TIME';//查询default的profile设置是否有密码限制，发现密码生命期限为180天
 
 alter profile default limit password_life_time unlimited;   //修改default的profile密码策略为无限制
+
+
 
 
 
