@@ -1,0 +1,27 @@
+//修改表头
+grid.getColumnModel().setColumnHeader（4，"表头显示的文字"）
+
+//获取表格单元格的值
+grid.getStore().data.items[0].data.headerData   // headerData为列元素，grid.getStore().data.items[0] 可以做判断条件
+
+//根据id获取值
+Ext.getCmp("formStartDate").getValue()；//如果是下拉框取得的是key值
+Ext.getCmp("formStartDate").getRawValue(); //取得的是value值
+
+//使用日期控件将时间格式化
+new Date(Ext.getCmp("formStartDate").getValue()).format("Y")；
+
+//表单元素的取值
+policyForm.getForm().findField('idNumber').getValue()；
+
+//表单元素的赋值
+policyForm.getForm().findField('CustomerName').setValue("需要赋的值");
+
+
+//发送ajax请求的取值
+success : function(d, e) {
+																var reResult = Ext.decode(d.responseText).result;
+
+//都是将表单元素置空
+Ext.getCmp('add_goodsName').setValue("");										
+Ext.getCmp("add_goodsName").clearValue();
