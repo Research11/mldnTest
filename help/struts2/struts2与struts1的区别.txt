@@ -1,0 +1,17 @@
+概念：struts是MVC模式设计的实现，通过配置文件隔离了模型和视图，以action的概念对用户的请求进行了封装，还提供了自动将请求数据填充到对象中，以及页面标签等简化代码的工具。
+
+1.Struts1与Struts2
+
+Struts1:是Apache的开源项目，世界上最早的mvc框架。
+
+优点：长时间的发展，丰富的开发文档和广泛的开发群体令它成熟稳定。
+
+缺点：对视图的支持比较单一（只支持jsp）
+
+Struts1完全基与Servlet API，与Servlet API严重耦合在一起，难于测试。只支持jsp一种视图
+
+Struts2:是WebWork开源组织opensymphony开发的框架，其设计理念要比Struts1先进很多。
+
+优点：支持更多的试图技术，松耦合，让框架不在与Servlet API耦合在一起。
+
+缺点：出现的晚，流行度以及市场不如Struts1。

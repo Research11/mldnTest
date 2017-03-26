@@ -1,0 +1,33 @@
+元注解：用来修饰其它的注解定义
+1.@Retention：用于指定被修饰的注解可以保留多长时间
+
+用法：@Retention（RetentionPolicy.RUNTIME）
+
+value值可以是：
+RetentionPolicy.CLASS(默认值)：编译器将把注解记录在class文件中，当运行java程序时，java虚拟机不再保留注解，程序通过反射无法获取注解。
+
+RetentionPolicy.RUNTIME：编译器将把注解记录在class文件中，当运行java程序时，java虚拟机也会保留注解，程序可以通过反射获取该注解。
+
+RetentionPolicy.SOURCE:编译器将直接丢弃被修饰的注解
+
+2.@Target：用于指定被修饰的注解能修饰那些程序元素
+
+用法：@Target（value={type,field,method.....}）
+      @Target（{type,field,method.....}）
+      @Target（TYPE）
+
+value值可以是：
+ElementType.ANNOTATION_TYPE:注解声明
+ElementType.CONSTRUCTOR:构造方法声明
+ElementType.FIELD:成员变量声明
+ElementType.LOCAL_VARIABLE:局部变量声明
+ElementType.METHOD:方法声明
+ElementType.PACKAGE:包声明
+ElementType.PARAMETER:参数声明
+ElementType.TYPE:类 接口 （包括注解类型）或枚举声明 
+
+3.@Documented：所有使用该注解修饰的程序元素的API文档中都讲包含该注解说明。
+
+用法： @Documented
+
+4.Inherited：用于指定被修饰的注解将具有继承性

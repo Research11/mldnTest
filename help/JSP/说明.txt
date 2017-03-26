@@ -1,0 +1,38 @@
+为了避免Eclipse打开文件出现乱码和创建JSP文件时默认支持中文，可以在Eclipse中做如下设置：
+1.在Eclipse中打开“Window”菜单，点击“Preferences”，在打开的对话框左边展开“General”，点击“Workspace”，在右边找到“Text file encoding”，选择下面的“Other”，然后在后面的下拉列表中选择“UTF-8”，点击下面的“Apply”按钮。
+
+2.接下来在这个打开的对话框的左边再展开“Web”节点，点击其中的“JSP Files”，然后在右边的“Encoding”后面选择“ISO 10646/Unicode(UTF-8)”，再点击下面的“Apply”，最后点击“OK”完成。
+
+3.JSP有哪些动作？作用分别是什么？
+
+jsp:include:在页面被请求的时候引入一个文件。
+
+jsp:useBean:寻找或者实例化JavaBean
+
+jsp:setProperty:设置JavaBean的属性
+
+jsp:getProperty:输出JavaBean的属性
+
+jsp：forward:把请求转到一个新页面
+
+jsp:plugin:根据浏览器的类型为Java插件生成object或embed标记
+
+4.JSP和Servlet的关系
+
+通俗的说jsp是嵌套Java代码的html，Servlet是嵌套html的Java代码
+
+jsp页面第一次发出请求，jsp页面会转化为对应JSP中指令的JAVA类，由容器创建对象，实际上就是一个Servlet。静态的HTML直接输出到和Servlet service方法关联的输出流。
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,20 @@
+一.hibernate下载
+1.hibernate官网：Hibernate ORM Downloads
+
+2.on SourceForge
+
+3.如果版本比较高：点击Home
+
+4.hibernate-search  选择版本
+
+5.选择：hibernate-search-3.4.1.Final-d....
+
+二.更改jdk版本
+Window --->perferennces--->java--->Compiler
+
+D:\framework\hibernate-distribution-3.3.2.GA\project\tutorials\web\src\main\resources
+
+三.打印日志：
+本机路径：D:\jarbao\hibernate-distribution-3.3.2.GA-dist\hibernate-distribution-3.3.2.GA\project\etc
+
+log4j.properties文件：log4j.rootLogger=（error 或者 debug）

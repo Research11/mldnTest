@@ -1,0 +1,13 @@
+1.可以再： D:\软件\apache-tomcat-7.0.50\conf\context.xml里面配置
+<Context path="/itcast" docBase="c:\news"/>元素。
+但是:在这里配置会被所有的WEB应用所加载！（会被所有web程序所共享）
+配置缺省只需将 <Context path="" docBase="c:\news"/>
+
+2.可以再：D:\软件\apache-tomcat-7.0.50\conf\Catalina\localhost目录下创建一个以a.xml结尾的文件，里面写<Context path="/itcast" docBase="c:\news"/>元素。其中a.xml中的a会被用作虚拟目录。（不需要重启服务器，实际应用开发用的多）
+
+使用这种方式配置缺省的话：需要将文件名命名为ROOT.xml!(配置缺省时需要重启服务器)
+
+3.自动管理web应用 ：D:\软件\apache-tomcat-7.0.50\webapps放置news文件
+访问：http://localhost:8080/news/1.html
+
+注：前面两种情况适用于：web应用（news）于服务器不在同一个磁盘的情况反之

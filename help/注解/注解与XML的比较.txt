@@ -1,0 +1,25 @@
+1.注解与XML的比较(可以混合使用)
+
+XML在开发的时候比较慢，代码冗余比较高，在更新java类的时候XML不会同步更新，但是在维护的时候查看类之间的关系比较方便
+
+注解：开发速度快，维护的时候比较困难
+
+使用注解要在applicationContext.xml中开启扫描
+
+首先是要有context的命名空间，<context:component.scan base-package=""></context:component.scan>
+
+通用类里面：
+类上面写：@Service（"xml里面的id名称"）@lazy(true)
+
+@Resorce  //没有指定名称默认是属性的名称与id捆绑
+private SessionFactory sessionFactory; 
+
+set()方法不用写了
+
+继承了通用类的实现类：@Service（"xml里面的id名称"）
+
+公共的action里面:类上面：@Controller  @Scope("prototype")
+
+原来xml属性注入的不用set方法  属性上加 @Resorce 即可
+
+其它的action类上面也写：@Controller  @Scope("prototype")

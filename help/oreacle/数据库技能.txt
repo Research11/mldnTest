@@ -1,0 +1,46 @@
+视图 ：
+
+序列 ：创建序列语法如下：
+
+CREATE SEQUENCE 序列名 
+
+[INCREMENT BY n] 	INCREMENT BY 用于定义序列的步长（每次增长多少），如果省略，则默认为1，如果出现负值，则代表序列的值是按照此步长递减的。
+
+[START WITH n] 		START WITH 定义序列的初始值(即产生的第一个值)，默认为1。
+
+[{MAXVALUE/ MINVALUE n|NOMAXVALUE}]   定义序列生成器能产生的最大值  MINVALUE定义序列生成器能产生的最小值  选项NOMAXVALUE是默认选项
+
+[{CYCLE|NOCYCLE}]   表示当序列生成器的值达到限制值后是否循环。CYCLE代表循环，NOCYCLE代表不循环。如果循环，则当递增序列达到最大值时，循环到最小值;对于递减序列达到最小值时，循环到最大值。如果不循环，达到限制值后，继续产生新值就会发生错误
+
+[{CACHE n|NOCACHE}]; 定义存放序列的内存块的大小，默认为20。NOCACHE表示不对序列进行内存缓冲。对序列进行内存缓冲，可以改善序列的性能。
+
+删除序列
+
+DROP SEQUENCE 序列名;
+
+序列的使用：insert into  table (id,name) values(序列名.nextval,zhangsan)
+
+查询所有序列
+select * from user_sequences;
+
+
+索引 ：创建索引的语法如下：（B树索引，位图索引）
+
+create index 索引名 on 表名(列名);   创建多列索引：   create index 索引名 on 表名(列名，列名);
+
+创建唯一索引：CREATE UNIQUE INDEX UQ_ENAME_IDX ON EMP(ENAME);   create unique  index 索引名 on 表名（列名）
+
+创建位图索引： create Bitmap index 索引名 on 表名(列名);  列名是有重复的时候使用位图索引
+
+在select语句查询时，Oracle系统会自动为查询条件上的列应用索引
+
+查询所有索引：
+select * from user_indexs  或   select * from user_ind_columns
+
+游标 ： 
+
+触发器 :
+
+动态sql ：
+
+plsql编程 ：

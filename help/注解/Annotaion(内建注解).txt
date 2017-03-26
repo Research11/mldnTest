@@ -1,0 +1,15 @@
+1.@Override可以保证当前子类确实覆盖了父类的方法
+
+2.@SuppressWarnings(value={"all","","","","",""})用来抑制警告信息（可以用在 类 方法 某一条语句）
+
+value值可以是：
+deprecation: 取消使用了过时程序元素的警告
+unchecked:  取消执行了未检查的转换的警告
+unused:  取消有程序元素未被使用的警告
+fallthrough:  取消switch程序块直接通往下一种情况而没有break
+path:  取消在类路径，源文件路径等中不存在的路径的警告
+serial:  取消在可序列化的类上缺少serialVersionUID定义的警告
+finally:  取消任何finally子句不能正常完成的警告
+all: 取消所有情况的警告
+
+3.@Deprecated 标识类方法属性为过时（可以用在 类 属性 方法）

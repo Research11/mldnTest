@@ -1,0 +1,40 @@
+package com.pb.common;
+
+import java.util.List;
+
+import org.hibernate.Hibernate;
+import org.hibernate.classic.Session;
+import org.hibernate.transform.Transformers;
+
+import com.pb.entity.Students;
+import com.pb.util.HibernateUtil;
+
+public class Test {
+	public static void main(String[] args) {
+		Session session=HibernateUtil.getSessionFactory().openSession();
+		session.beginTransaction();
+		String sql="select name as sname,email as semail from student";
+		String sql1="update student set name=? where id=?";
+		String sql2="select t2.classname as classname,t1.name as sname,t1.age as sage,t1.email as semail from student t1  inner join class1 t2 on t1.id=t2.sid";
+		@SuppressWarnings("unchecked")
+		List<Students> list=session.createSQLQuery(sql2)
+				.addScalar("sname", Hibernate.STRING)
+				.addScalar("semail",Hibernate.STRING)
+				.addScalar("classname", Hibernate.STRING)
+				.addScalar("sage", Hibernate.INTEGER)
+				.setResultTransformer(Transformers.aliasToBean(Students.class))
+				.list();
+	
+		for(Students stu:list){
+			System.out.println(stu.getSname()+"\n"+stu.getSemail());
+		}
+		
+//		session.createSQLQuery(sql1)
+//		.setString(0, "zhangsan")
+//		.setParameter(1, 1)
+//		.executeUpdate();
+		
+		session.getTransaction().commit();
+		
+	}
+}

@@ -1,0 +1,26 @@
+jdk指的是：开发环境（既有运行环境又有开发环境）
+
+jre指的是：运行环境
+
+java的编译器的配置：工程名称-->右键-->   -->java Compiler-->Enable project specific settings(此选项就是配置java的编译器)
+
+注意：编译器的版本号不能高于运行环境的版本（只能是小于等于）
+
+工程名称-->右键--> 属性  -->java Build Path 是配置运行环境的
+
+
+2.断点调试：
+
+f5：step into 是进入方法  
+
+f6：step over 是往下执行 
+
+f7：step return 相当于是返回 
+
+drop to frane: 跳到当前方法的第一行 
+ 
+resune: 跳到下一个断点（如果没有下一个断点，则运行完整个程序） 
+
+watch: 观察变量或表达式的值（在变量上面右键）
+
+注意：1.断点调试完清除断点 2.结束运行断点的虚拟机（jvm）

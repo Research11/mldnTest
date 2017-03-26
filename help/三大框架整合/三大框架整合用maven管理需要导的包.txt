@@ -1,0 +1,53 @@
+一.spring所需的jar包：
+1.spring-core
+
+2.spring-context
+
+3.spring-jdbc
+
+4.spring-beans
+
+5.spring-web
+
+6.spring-expression
+
+7.spring-orm
+
+二.进行单元测试时需要使用Junit
+1.junit
+
+三.搭建Struts2开发环境并整合Spring3
+
+1.strtus2-core 
+
+2.struts2-spring-plugin(struts2和Spring整合时需要使用到的插件)
+
+3.struts2-convention-plugin(使用了这个插件之后，就可以采用注解的方式配置Struts的Action，免去了在struts.xml中的繁琐配置项)
+
+4.struts2-config-browser-plugin(config-browser-plugin插件不是必须的，但是使用了这个插件之后，就可以很方便的浏览项目中的所有action及其与 jsp view的映射)
+
+四.Hibernate4开发环境并整合Spring3
+1.1.hibernate-core
+
+注意：一定要排除掉Struts2中的javassist，否则就冲突了。
+
+五.添加数据库驱动jar包
+1.mysql
+
+六.添加数据库连接池jar包（老师讲课用的是c3p0）常用的还有dbcp,Druid
+
+<dependency>
+    <groupId>com.alibaba</groupId>
+    <artifactId>druid</artifactId>
+    <version>1.0.12</version>
+</dependency>
+
+七.添加aspectjweaver包
+
+<dependency>
+   <groupId>org.aspectj</groupId>
+   <artifactId>aspectjweaver</artifactId>
+   <version>1.8.5</version>
+</dependency>
+
+

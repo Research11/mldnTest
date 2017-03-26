@@ -1,0 +1,104 @@
+子查询：(如果where中的子查询条件是一条记录可以用= <  > !=)
+(如果where中的子查询条件是多条记录就用用到 in ...)
+1.where条件中的子查询（不要求两个表有相关字段）
+select id,name,price from es_product 
+where sort_id=(select id from es_sort where sortname='图书');
+					
+select empno,ename,sal from emp where deptno=(select deptno from dept where dname='RESEARCH')
+
+在emp表中，找出其工资超过所在部门平均工资的雇员信息
+select * from emp e1 where SAL>(select avg(SAL) from emp e2 where e1.deptno=e2.deptno);
+
+2.排序时默认先执行where在进行排序（所以做以下处理）
+select id,name,saledate,rownum from (select * from es_product order by saldate desc) where rownum<=5;
+
+select ename,job,hiredate,rownum from (select * from emp order by hiredate desc)
+where rownum<=5
+
+分页查询：（属于子查询的特殊使用）
+select * from (select e.*, rownum rn from 
+(select * from emp  order by hiredate desc ) e )
+where rn>=5 and rn<=8
+
+在mybatis映射xml文件中并使用mysql数据库的分页查询：
+
+select p.* from(select e.*,@rownum:=@rownum+1 AS rn from (select * from (SELECT @rownum:=0) r, student order by birthday desc) e) p where rn>20 and rn &lt; 30
+
+表链接查询：（两个表要有相关字段）
+内连接查询：（等值链接）
+select e.empno,e.ename,e.hiredate,e.sal,d.dname from emp e,dept d
+where e.deptno= d.deptno and dname='SALES';
+
+内连接查询：（非等值链接）
+select e.empno,e.ename,e.hiredate,e.sal,d.dname from emp e,dept d
+where e.deptno=d.deptno and sal between 800 and 3000;
+
+左外链接查询：（left outer join 也可以使用"+" +加的想当是空格）
+select e.empno,e.ename,e.hiredate,e.sal,d.dname from emp e left outer join dept d
+on e.deptno= d.deptno and dname='SALES';
+
+select e.empno,e.ename,e.hiredate,e.sal,d.dname from emp e,dept d
+where e.deptno= d.deptno(+) and dname='SALES';
+
+综合案例：（子查询和表链接）
+查询出高于本类商品平均价格的,商品类别id,商品id，商品名称，价格，库存量。
+
+分析：
+确定要查询的数据以及数据来源
+select sort_id,id,name,price,stockcount from es_product a
+where price>(本类商品均价格)
+
+每类商品平均价格
+(select sort_id,avg(price) as avgprice from es_product
+group by sort_id)b
+
+综合案例例句：
+select empno, ename, job, hiredate, sal, emp.deptno
+  from emp, (select deptno, avg(sal) avgsal from emp group by deptno) a
+ where a.deptno = emp.deptno
+   and sal > a.avgsal
+
+
+注：
+select empno,ename,sal,deptno from emp e1 where sal>(select AVG(sal) from emp e2 where e1.deptno=e2.deptno);
+
+select empno, ename, job, hiredate, sal, emp.deptno
+  from emp, (select deptno, avg(sal) avgsal from emp group by deptno) a
+ where a.deptno = emp.deptno
+ and sal > a.avgsal
+
+以上两个可以实现同样的效果
+
+
+sql递归查询：
+
+select t.id  from T_OMN_BUSI_ORG t start with t.id ='根节点从哪开始' connect by prior t.id = t.parent_id
+
+sql 多表连接查询：
+
+select a.* from act_hi_actinst a inner join t_crt_policy b on a.proc_inst_id_=b.process_id inner join 
+t_crt_customer c on b.policy_holder=c.id where a.assignee_='" + userId+"'
+
+
+数据库用户密码到期有提示：修改密码策略的sql语句(如果有了提示密码还是要修改，保持原来的就行,链接：http://blog.itpub.net/26194851/viewspace-756394/)
+
+SELECT username,PROFILE FROM dba_users;  //查询该用户所使用的profile，如果没有特别设置，一般会是default：
+
+SELECT * FROM dba_profiles WHERE resource_name='PASSWORD_LIFE_TIME';//查询default的profile设置是否有密码限制，发现密码生命期限为180天
+
+alter profile default limit password_life_time unlimited;   //修改default的profile密码策略为无限制
+
+
+
+--日期函数：日期 + 数字 = 日期     日期 - 数字 = 日期    日期 - 日期 = （天数）
+
+select SYSDATE+3 from dual
+
+SELECT SYSDATE-3 FROM dual
+
+select  round(SYSDATE - hiredate) 入职的天数,trunc(SYSDATE - hiredate) from emp -- round 是四舍五入 trunc 是直接去除小数部分
+
+
+
+
+

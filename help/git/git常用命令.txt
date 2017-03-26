@@ -1,0 +1,121 @@
+安装完 git 以后：
+
+1.初始化用户名和邮箱（配置本地用户名 邮箱地址）：
+
+初始化命令为：git config --global user.name "Research11"
+	      git config --global user.email "345303227@qq.com"
+
+2.第一次仓库初始化：mypro目录下:右键找到 GIT bash 弹出命令行窗口
+
+在命令行窗口敲入：git init 回车（此时mypro文件夹下面会多出一个.git文件，这就是本地仓库）
+
+3.在mypro文件夹里面创建文件夹 hello.java
+在命令行窗口敲入：git add hello.java (加入到暂存区)
+之后再在命令行窗口敲入：git commit -m "注释内容"（此时就提交到了本地仓库）
+
+（本地仓库就是磁盘上的文件夹）
+
+随时可以用：git status 查看那状态 git help 是帮助
+
+使用git bash 命令行：
+
+
+1.生成公钥私钥的命令：
+
+ssh-keygen -t rsa -C "345303227@qq.com"  
+回车-->之后会询问提示输入密码（默认即可）回车  回车
+
+之后打开git hub界面 在ssh keys 里面输入公钥此时也就建立好了链接（配置完成）
+
+2.添加远程仓库
+ 
+
+3.链接仓库
+
+git remote add origin git@github.com:Research11/mldn.git 回车（此时就建立了链接）
+
+git remote add origin https://github.com/Research11/mldn.git(链接远程仓库)
+
+将本地仓库推送到git hub 远程仓库上命令如下：
+git push -u origin master 回车 输入用户名  输入密码 回车 就成功推送到远程仓库了
+
+
+
+4.git常用命令：
+
+git add 添加到暂存区
+git commit -m "注释"提交到本地仓库
+git log hello.java 查看日志
+git status 查看当前状态
+git diff hell.java
+git add .添加所有
+git log --pretty=oneline 查询当前修改后的日志信息
+git reset --hard HEAD~1 版本回退到上一个版本
+git reset --hard commit id(例如：git reset --hard a47db6a6cf60c417aaf3996ce17dcfc51de0d79f)
+恢复到最后一次提交（是针对 git reset hard HEAD~1而言的）
+git checkout -- demo.java 是在文件未添加未提交的情况下修改文件
+先git reset HEAD demo.java 接着 git checkout -- demo.java是修改文件已添加但未提交的时候
+git rm -- hello.java 删除文件操作
+git reset --hard 上一个版本的commit id
+例如：git reset --hard a47db6a6cf60c417aaf3996ce17dcfc51de0d79f（删除后的恢复）
+
+查看现在远程服务器端已经存在的仓库信息命令如下：
+git remote -v   回车
+
+本地仓库被修改同时我们要提交到远程仓库时：
+
+要先执行 git commit -a -m "update file"  在执行 git push origin master 回车 输入用户名密码
+
+克隆仓库：（正确做法要先克隆）
+git clone https://github.com/Research11/mldnback.git
+
+git add .
+
+git commit -m "test file"
+
+git push origin master 回车 添加用户名 Research11 密码 liuhb123
+
+提交完成 （已经推送到远程仓库）
+
+5.git分支管理
+ 
+创建分支  git branch brh
+
+查看分支 git branch
+
+切换分支 git checkout brh
+
+在分支上修改代码以后 先执行 git commit -a -m "注释" 在执行 git push origin brh
+
+创建分支并切换  git checkout -b brh
+
+删除分支 git branch -d brh  （只会删除本地分支）
+
+合并分支： git merge brh （此时只是本地仓库的master改变了，远程仓库并没有改变）
+合并分支之后 mast主分支虽然改变  但是并不用执行 git commit -a -m "注释" 命令
+还需要 执行 git push origin master 推送到远程仓库
+
+（分支的切换就是就是改变 hard指针的指向）
+删除远程分支： git push origin --delete brh
+
+
+http://pan.baidu.com/s/lhq3TeEK
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

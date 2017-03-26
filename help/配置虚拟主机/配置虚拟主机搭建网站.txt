@@ -1,0 +1,17 @@
+1.浏览器里面输入：http://www.baidu.com.cn(现将域名翻译成IP)
+浏览器先到---> DNS（pc）---> DNS翻译成IP返回给--->浏览器--->浏览器得到IP--->再去访问百度主机
+
+访问DNS之前要先访问操作系统
+
+注：出现无法显示该页面,有两种情况：百度主机崩溃或者dns崩溃
+
+配置主机：C:\Windows\System32\drivers\etc\hosts 目录下配置：
+192.168.2.103  www.google.com
+
+D:\软件\apache-tomcat-7.0.50\conf\server.xml 目录下配置：
+
+	  <Host name="www.google.com"  appBase="c:\test">
+		<Context path="/email" docBase="c:\test\email"/>
+	  </Host>
+
+此时访问的目录为：http://www.google.com/email/1.html

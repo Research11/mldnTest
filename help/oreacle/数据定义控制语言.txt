@@ -1,0 +1,106 @@
+用户：SYS  密码：manager  最高权限
+
+用户：system  密码：change_on_install  管理员
+
+用户：scott  密码：tiger   测试账户
+
+创建表空间：必须使用sys或者system
+create tablespace huigu
+datafile 'huigu.DBF'
+size 100M autoextend on;
+
+查看表空间：select * from dba_data_files;
+
+调整表空间大小：alter database datafile '数据文件全路径' resize 新的大小
+
+改变表空间的读写状态：alter tablespace huigu read write
+（read write：表示表空间可读写 read only：表示表空间只读）
+
+删除表空间:DROP TABLESPACE huigu;
+
+创建用户：
+create user zhuanyong identified by 123
+default tablespace huigu
+temporary tablespace temp;
+
+更改口令：ALTER USER zhuanyong IDENTIFIED BY 1234;
+
+更新会话：ALTER session SET nls_date_format='YYYY-MM-dd HH24:MI:SS'; 
+
+//不想每次都配置需要修改环境变量。系统环境变量：变量名：nls_date_format 变量值：YYYY-MM-dd HH24:MI:SS
+
+删除用户：DROP USER zhuanyong CASCADE;         //CASCADE用于删除模式对象。
+
+分配权限：grant connect,resource to zhuanyong;
+
+取消授权：revoke connect,resource from zhuanyong;
+
+oracle字段数据类型：（文本数据类型）
+  char:    用于描述定长的字符型数据，最大2000个字节。常用于存储少量文本。
+  varchar2:用于描述变长字符数据，最大4000个字节。
+  long：   用于保存高达2G大小的数据，不过常常被clob类型代替。
+ 
+oracle字段数据类型：（数值数据类型）
+  number:用来存储整形或浮点型的数值。
+  binary_integer:是PL/SQL中的整型，只能用在PL/SQL中。速度比Integer慢。
+  binary_double:是Oracle10G提供的一种新的数据类型，用于存储一个双精度的64位的浮点数。
+
+为了与其它数据库相兼容：提供了一些number子类型：float,real,double
+
+
+oracle字段数据类型：（日期数据类型）
+  Date:用于存储表中的日期和时间数据。
+  timestamp:用于存储日期的年，月，日以及时间的小时，分和秒值。其中秒值精确到小数点后6位，该数据类型同时包含时区信息。
+  SYSTIMESTAMP 函数功能是返回当前日期，时间和时区。
+
+oracle字段数据类型：（大对象数据类型）
+  clob:用来保存较大的图形文件或带格式的文本文件 例如：word  音频 视频 等非文本文件
+  clob:一个表可有多个clob字段，还可用于存储二进制对象，比如图片等。
+
+创建数据库表：
+create table student(
+       id number(10),
+       name varchar2(20) not null,
+       age number(3),
+       email varchar2(30)
+);
+
+查看表结构：desc student;
+
+约束：是为了数据完整性而建立的，防止不合法数据进入数据库。（1.实体完整性约束（主键） 2.域完整性约束 3.引用完整性约束 4.自定义完整性约束）
+
+主键约束：alter table student add constraint pk_id primary key(id);
+
+唯一约束：alter table student add constraint uq_email unique(email);
+
+检查约束：alter table student add constraint chk_age check(age between 15 and 40);
+
+外键约束：alter table student add constraint fk_stuno foreign key(stuno) references stuinfo (stuno);
+
+自定义完整性约束：常借助于：数据库规则，存储过程，触发器对象 来进行约束
+
+使用sql删除约束：alter table student drop constraint chk_age;
+
+查看约束：select * from user_constraints where table_name='STUDENT';
+
+数据的完整性：是指数据库中数据的准确性（1.验证每行数据是否符合要求，2.验证每列数据是否符合要求）
+
+更改现有列定的语法：ALTER TABLE student MODIFY (email varchar2(25));
+
+向表中添加新列的语法：ALTER TABLE student ADD(sex VARCHAR2(4),Address VARCHAR2(20));
+
+删除表中现有列的语法：
+  删除一列：ALTER TABLE student DROP COLUMN sex; 
+  删除两列：ALTER TABLE student DROP (sex,address);
+
+删除表中的记录而不删除表结构：truncate table student;
+
+删除表以及全部数据：drop table student;
+
+命名规范：
+创建表空间时：以TBS_为前缀。
+创建表时：以TBL_为前缀。
+添加字段时：以字母开头，采用有特征含义的单词或字段。
+添加主键时：以PK_为前缀。
+添加外键时：以FK_为前缀。
+表名的最大长度不应该超过30个字符，不能使用空格和单引号。

@@ -1,0 +1,29 @@
+内容提示：alt+/ 
+
+在eclipse中配置提示功能：window-->属性-->搜索框上输入key-->keys-->找到alt+/ (看看配置的是什么)
+
+快速修复：ctr+1
+
+导包：ctr+shift+O
+
+格式化代码块：ctr+shift+f
+
+向前向后：alt+方向键
+
+添加注释：ctr+shift+/
+
+去除注释：ctr+shift+\
+
+重置透视图：window-->perspective-->Reset perspective (用来设置eclipse的显示界面)
+
+更改大小写：ctrl+shift+x 变为大写 ctrl+shift+y 变为小写
+
+复制行：ctrl+alt+下键（有些不能用）
+
+调整某两行的上下顺序：alt+向上或向下
+
+查看类的继承关系：ctrl+t
+
+查看源代码：ctrl+shift+t  再弹出的对话框中输入要查看的代码
+
+ctrl+shift+l:查看eclipse中的快捷键

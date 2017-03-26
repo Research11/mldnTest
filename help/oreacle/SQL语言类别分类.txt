@@ -1,0 +1,7 @@
+数据定义语言（DDL）:CREATE(创建) ALTER(更改) 和 DROP(删除) 命令。
+
+数据操纵语言（DML）:INSERT(插入) SELECT(选择) DELETE(删除) 和 UPDATE(修改) 命令。
+
+事务控制语言（TCL）:COMMIT(提交) SAVEPOINT(保存点) 和 ROLLBACK(回滚) 命令。
+
+数据控制语言（DCL）:GRANT(授予) 和 REVOKE(回收) 命令。

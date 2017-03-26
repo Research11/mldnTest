@@ -1,0 +1,21 @@
+1.session.get(Student.class, 1)和session.load(Student.class, 1)获取关联对象时都是延迟加载（student获取班级）
+
+注：产生延迟加载的两种情况1.lazy="true"2.加载关联对象的session.get(Student.class, 1)和session.load(Student.class, 1)（不管从那一端）
+
+2.在获取加载对象的时候:session.load(Student.class,1)是延迟加载
+  		       session.get(Student.class, 1)不是延迟加载
+（单独获取班级或者是单独获取学生对象的时候而言）
+
+3.可以通过配置映射文件属性改变加载方式（输出几条sql语句）
+   属性配置方式：lazy="false" （连发两条sql语句） fetch="join" 默认为select（只发一条）
+
+4.fetch属性的含义：
+
+有两个可选值:join和select
+这个属性决定了你在查询的时候，是先查主表记录再查关联记录，还是要把关联表的记录一起查询出来。
+
+select方式时先查询返回要查询的主体对象（列表），再根据关联外键id，每一个对象发一个select查询，获取关联的对象，形成n+1次查询
+如果lazy=true（延迟加载），select在查询时只会查出主表记录，用到了关联数据时再自动在执行查询
+
+而join方式，主体对象和关联对象用一句外键关联的sql同时查询出来，不会形成多次查询。
+	

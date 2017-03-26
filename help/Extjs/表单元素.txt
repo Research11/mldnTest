@@ -1,0 +1,21 @@
+单选按钮：xtype: radiogroup   new Ext.form.RadioGroup
+
+下拉框：xtype: combobox, combo 
+
+文本框：xtype: textfield  
+
+日期控件：xtype: datefield
+
+按钮：xtype: button
+
+文本域：xtype: textareafield, textarea
+
+数字文本域：xtype: numberfield
+
+复选框：xtype: checkboxgroup
+
+表单工具栏：xtype: toolbar  
+
+表单: xtype: form
+
+filefield

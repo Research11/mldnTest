@@ -1,0 +1,40 @@
+保存到数据库
+
+File file = new File("D:/test.xls");
+		InputStream input;
+		try {
+			input = new FileInputStream(file);
+			FileInputStream inputStream = new FileInputStream(file);  
+			Blob blob = Hibernate.createBlob(inputStream); 
+			Student stu = new Student();
+			stu.setBigdata(blob);
+			//studentserviceDao.StudentSave(stu);
+			
+			input.close();
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+
+
+从数据库读
+
+Student student = (Student) getSession().get(Student.class, 20);
+		
+		Blob txt = student.getBigdata();
+		
+		try {
+			InputStream in = txt.getBinaryStream();
+			
+			File file = new File("D:/Doc/test.xls");
+			OutputStream out = new FileOutputStream(file);
+			byte[] bytes = new byte[in.available()];
+			in.read(bytes);
+			out.write(bytes);
+			in.close();
+			out.close();
+			
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
