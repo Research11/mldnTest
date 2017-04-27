@@ -19,6 +19,7 @@ CREATE SEQUENCE 序列名
 DROP SEQUENCE 序列名;
 
 序列的使用：insert into  table (id,name) values(序列名.nextval,zhangsan)
+	    select 序列名.nextval from dual
 
 查询所有序列
 select * from user_sequences;

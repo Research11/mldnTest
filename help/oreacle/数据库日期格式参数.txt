@@ -1,0 +1,23 @@
+1.日期格式参数及其含义说明     
+D              一周中的星期几     
+DAY        天的名字，使用空格填充到9个字符     
+DD          月中的第几天     
+DDD       年中的第几天     
+DY          天的简写名     
+IW           ISO标准的年中的第几周     
+IYYY      ISO标准的四位年份     
+YYYY    四位年份     
+YYY,YY,Y       年份的最后三位，两位，一位     
+HH         小时，按12小时计     
+HH24    小时，按24小时计     
+MI         分     
+SS         秒     
+MM      月     
+Mon     月份的简写     
+Month  月份的全名     
+W        该月的第几个星期
+WW    年中的第几个星期
+
+
+--测试方法
+select to_char(sysdate,'DY') from dual;
