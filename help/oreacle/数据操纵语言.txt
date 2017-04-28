@@ -120,5 +120,42 @@ select 类别 max(pice) from student group by 类别；
 
 
 
+select * from dba_data_files;--表空间
+
+DROP TABLESPACE huigu;
+
+select count（*） from user_tables;
+
+select * from user_tables
+
+delete users;
+
+drop users;
+
+select * from user_triggers;--触发器
+
+drop trigger USER_LOGIN_CO;
+
+select * from user_sequences;--序列
+
+drop sequence PERSON_ID;
+
+select * from all_views;--视图
+
+select * from user_objects --函数
+
+select * from user_procedures;--存储过程
+
+select * from user_indexes where table_name='USERS';--索引
+
+
+
+
+
+
+
+
+
+
 
 
