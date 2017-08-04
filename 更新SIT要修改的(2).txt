@@ -1,0 +1,182 @@
+----------------------------------【部署】-------------------------------------------
+打完war包之后访问http://10.10.108.20:7001/console，用户名及密码：operator/Oper12#$
+登陆后点击左侧【部署】，停止abfx应用。
+然后使用crt登陆10.10.108.20机器用户名及密码：root/p@ssw0rd20
+1.切换到bea1用户：su - bea1
+2.切换到 /home/bea1目录，删除abfx/跟abfx.war：rm -rf abfx/
+3.链接SFTPsession上传war包：（1）cd /home/bea1（2）lcd war包存在的本地目录
+（3）二进制上传命令：binary（4）put abfx.war
+4.解压abfx.war：unzip -n abfx.war -d abfx/
+5.再次访问weblogic控制台，选中abfx应用，点更新，下一步，完成。
+----------------------------------【部署】-------------------------------------------
+
+----------------------------------【数据库相关】-------------------------------------------
+10.10.108.20应用链接的是10.10.108.20机器的数据库，一共6用户：
+dev,jt_data,sx_data,jkx_data,ylx_data(密码跟用户名都一样)。
+----------------------------------【数据库相关】-------------------------------------------
+
+----------------------------------【mycat相关】-------------------------------------------
+10.10.108.17为开发环境。
+
+步骤：先停，然后更改schema.xml，然后重启即可。
+10.10.108.20应用链接的是10.10.108.20机器的mycat，使用root su mycat即可。
+启动：切换到/home/mycat/mycat/bin目录下，使用[./mycat start]命令即可。
+关闭：切换到/home/mycat/mycat/bin目录下，使用[./mycat stop]命令即可。
+更改逻辑库表：切换到/home/mycat/mycat/conf目录下，[vi schema.xml]修改。   输入命令：:wq     ，回车就是保存退出了
+type="global"意味着是全局表。
+新配置mycat表的话，去看对应的分片上是否有表，没有找对应开发人员要脚本，然后去配置的分片上执行以下。
+dnPublic：公共库
+dnGroup：集团库
+dnPropertyInsurance：财产险库
+dnInsuranceOnLife：寿险库
+dnHealthInsurance：健康
+dnEndowmentInsurance：养老
+dnModel：模型库
+dnXbrl：xbrl库
+
+AB005	安邦保险集团总部
+AB001	安邦财产保险总公司
+AB002	寿险总公司
+AB003	健康险总公司
+AB010	养老险总公司
+
+--从服务器上下载文件
+
+lcd  本地磁盘存储目录  例如 ：lcd D:/doc
+
+binary  二进制
+
+get  那个文件 例如：get schema.xml
+
+
+
+----------------------------------【mycat相关】-------------------------------------------
+
+-------application-linux.properties------------
+
+systemEmailServer=smtp.163.com
+systemEmailServerPort=25
+systemEmailAddr=fly033030@163.com
+systemEmailUser=zcl
+systemEmailPwd=zcl033030
+
+bangbangFlag=true
+
+xbrl_server=http://10.10.108.17:7001/ab_russ
+model_server=http://10.10.108.17:7001/model/
+isDomainCheck=false
+
+-------application-linux.properties------------
+
+
+
+-------ibasconnection.properties---------------
+
+connection.url=jdbc\:mysql\://localhost\:8066/TESTDB
+hibernate.dialect=org.hibernate.dialect.MySQLInnoDBDialect
+connection.driver_class=com.mysql.jdbc.Driver
+connection.username=mycat
+connection.password=p@ssw0rd20
+
+-------ibasconnection.properties---------------
+
+---------------quartz.properties---------------
+
+org.quartz.dataSource.hzbDS.driver=oracle.jdbc.driver.OracleDriver
+org.quartz.dataSource.hzbDS.URL=jdbc:oracle:thin:@10.10.108.20:1521:orcldb
+org.quartz.dataSource.hzbDS.user=dev
+org.quartz.dataSource.hzbDS.password=dev
+
+---------------quartz.properties---------------
+
+---------------MyLdapUsernamePasswordAuthenticationFilter.java---------------
+把下面代码注释掉。
+//		if (isLdap.equals("0")){
+//			
+//			
+//		}else{
+//    	//LdapUserAuthenticate ua=new LdapUserAuthenticate();
+//	    	if (USER_VALIDATE_LDAP_TEST!=null&&USER_VALIDATE_LDAP_TEST.equals("test")){
+//	    		if (!connect("adced","abic@0626")){
+//	        		throw new AuthenticationServiceException("用户名或密码错误");
+//	        	}
+//	    		password=this.SYS_DEF_PWD;	
+//	    	}else{
+//	    		if (!connect(username,password)){
+//	        		throw new AuthenticationServiceException("用户名或密码错误");
+//	        	}
+//	    		password=this.SYS_DEF_PWD;	
+//	    	}
+//    	}
+---------------MyLdapUsernamePasswordAuthenticationFilter.java---------------
+
+---------------UserLoginController.java---------------
+String verifyCode = VerifyCodeUtils.generateVerifyCode(codeCount);
+verifyCode="1111";
+---------------UserLoginController.java---------------
+
+---------------------login.ftl---------------------------
+var hash="";
+if(loginForm.j_username.value.indexOf("admin")>-1){
+	hash=MD5(loginForm.j_password.value);
+}else{
+	hash=MD5(loginForm.j_password.value);
+}
+loginForm.j_password.value=hash;
+return true;
+
+<input class=TxtPasswordCssClass value="111111" name="j_password" type=password tabindex="2">
+<div class="nav_haltmain_search"><input value="1111" type='text' class=TxtVCodeCssClass name='j_captcha' tabindex="3"/> </div>
+
+----正确的
+
+    			var hash=MD5(loginForm.j_password.value);
+    			if(loginForm.j_username.value.indexOf("admin")>-1){
+    				hash=MD5(loginForm.j_password.value);
+    			}else{
+    				hash=MD5(loginForm.j_password.value);
+    			}
+    			loginForm.j_password.value=hash;
+				return true;
+    		
+
+---------------------login.ftl---------------------------
+
+---------------------weblogic.xml-----------------------
+<persistent-store-type>memory</persistent-store-type>
+---------------------weblogic.xml-----------------------
+
+
+
+tomcat 上部署
+
+10.10.108.18开发环境（应用）
+
+tomcat/tomcat
+
+root/p@ssw0rd18
+
+
+--查看weblogic进程
+
+ps -ef |grep weblogic
+
+--关闭进程
+
+kill - 9  进程号   
+
+--启动weblogic 进程（进入weblogic 的 bin 目录下）
+
+nohup  ./startWebLogic.sh &   先执行
+
+tail  -f  nohup.out	接着执行	
+
+
+--查看实时日志
+
+tail -f nohup.out (/home/bea1/7001_domain/bin/下面执行) ctrl+c 退出
+
+
+
+
+
