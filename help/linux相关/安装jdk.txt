@@ -1,0 +1,47 @@
+1.下载好linux版本的jdk放在指定的目录下面：
+
+	/home/javajdk
+
+2.然后在/home/javajdk下面执行：
+
+	cp jdk-8u144-linux-x64.rpm /usr/local
+
+3.进入/usr/local下面执行：
+
+	chmod +x jdk-8u144-linux-x64.rpm
+
+4.执行安装命令（还在/usr/local下）：
+
+	rpm -ivh jdk-8u144-linux-x64.rpm
+
+5.执行完毕后在执行配置环境变量：
+
+	vi /etc/profile
+
+6.在文件的最后面添加配置：
+
+	#set java environment
+
+	JAVA_HOME=/usr/java/jdk-8u144
+
+	CLASSPATH=.:＄JAVA_HOME/lib.tools.jar
+
+	PATH=＄JAVA_HOME/bin:＄PATH
+
+	export JAVA_HOME CLASSPATH PATH
+
+7.退出编辑：ctrl+c
+
+8.退出并保存：  :wq  回车
+
+9.查看版本号：  java _version
+
+10.提示信息如下表示安装成功：
+
+	java version "1.8.0_144"
+	Java(TM) SE Runtime Environment (build 1.8.0_144-b01)
+	Java HotSpot(TM) 64-Bit Server VM (build 25.144-b01, mixed mode)
+
+
+
+

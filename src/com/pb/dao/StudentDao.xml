@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.pb.dao.StudentDao">
+	<resultMap type="Student" id="studentmap">
+		<id column="id" property="id"/>
+		<result column="name" property="name"/>
+		<result column="email" property="email"/>
+		<result column="birthday" property="birthday"/>
+	</resultMap>
+
+	<select id="list" resultMap="studentmap">
+		select * from student
+	</select>
+	
+	<select id="findByid" resultMap="studentmap" parameterType="int">
+		  select * from person where id = #{id}
+	</select>
+	
+	<insert id="save" parameterType="int" keyProperty="id" useGeneratedKeys="true">
+	    insert into person (id, name, email, password,birthday) values (#{id}, #{name}, #{email}, #{password}, #{birthday})
+	</insert>
+	
+	<update id="update" parameterType="Student">
+	  update person set name = #{name}, email= #{email},password=#{password},birthday= #{birthday} where id = #{id}
+	</update>
+
+	<delete id="delete" parameterType="int">
+	  delete from person where id = #{id}
+	</delete>	
+</mapper> 
