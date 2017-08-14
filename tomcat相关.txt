@@ -1,0 +1,7 @@
+1.运行项目出现 java.lang.OutOfMemoryError：PermGen space异常 的处理方法：
+
+项目右键--->Run As--->Run Configurations...--->（x）=Arguments--->VM arguments:
+
+将VM arguments的文本框中的内容全部清除之后添加如下内容：
+
+-Xms512m -Xmx1024m -XX:PermSize=512m -XX:MaxPermSize=1024m
