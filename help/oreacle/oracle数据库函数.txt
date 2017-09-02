@@ -35,6 +35,21 @@ SELECT CONCAT('内蒙古','赤峰市','阿旗天山镇',name) FROM student
 update person name = CONCAT(CONCAT(CONCAT('工号为',name),'的员工姓名为'),name)  where ....
 
 
-3.字符串替换
+3.字符串替换  （translate）
+
+select translate('abcdefga','abc','wo') 返回值 from dual;
+
+结果会是：wodefgw
+
+其中 a 对应的是 w , b 对应的是 o , c没有对应，遇到 c就会将其删除 
+
+-- REPLACE是完全匹配替换
+
+select REPLACE('fgsgswsgs', 'sg' ,'eeerrrttt') 返回值 from dual;
+
+结果会是：fgeeerrrtttsweeerrrttts
+
+
+
 
 
