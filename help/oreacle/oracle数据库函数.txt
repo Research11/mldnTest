@@ -1,0 +1,40 @@
+1.去除某个字段的最后一个字符  例：
+
+select TRIM(',' from INDEX_FORMULA_IDS（列名） ) as INDEX_FORMULA_IDS  from t_irr_index_code （表名）;
+
+update person set name = TRIM(',' from name )       //去除前后的,号
+
+select substr(name,1,length(name)-1) from person;
+
+update person p set p.name = substr(name,1,length(name)-1)  where ....
+
+
+2.字符串拼接
+
+select INDEX_FORMULA_IDS||',' from t_irr_index_code  
+
+
+update t_irr_index_code set INDEX_FORMULA_IDS = INDEX_FORMULA_IDS||',' where INDEX_FORMULA_IDS not like '%,' and INDEX_FORMULA_IDS is not null
+
+
+
+SELECT CONCAT('姓名:',name) FROM person
+
+update person name = concat('姓名:',name)  where .....
+
+--oracle 数据库多个字符拼接
+
+SELECT CONCAT(CONCAT(CONCAT('工号为',name),'的员工姓名为'),name) FROM person
+
+-- mysql 数据库多个字符拼接 
+
+
+SELECT CONCAT('内蒙古','赤峰市','阿旗天山镇',name) FROM student
+
+
+update person name = CONCAT(CONCAT(CONCAT('工号为',name),'的员工姓名为'),name)  where ....
+
+
+3.字符串替换
+
+
