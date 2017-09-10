@@ -50,6 +50,48 @@ select REPLACE('fgsgswsgs', 'sg' ,'eeerrrttt') 返回值 from dual;
 结果会是：fgeeerrrtttsweeerrrttts
 
 
+4.多行拼接
+
+select  wm_concat(name)  from person  group by nums
+
+
+5.case when 的 使用
+
+select id,
+
+　　case
+
+　　when type=1 then 'Book'
+
+　　when type=2 then 'Video'
+
+　　when type=3 then 'DVD'
+
+　　when type=4 then 'CD'
+
+　　else 'Magazine'
+
+　　end
+
+　　from person  
+
+
+6  NVL函数的格式如下：NVL(expr1,expr2)
+
+含义是：如果oracle第一个参数为空那么显示第二个参数的值，如果第一个参数的值不为空，则显示第一个参数本来的值。
+
+例： select ename,NVL(comm, -1) from emp;
+
+
+
+
+
+
+
+
+
+
+
 
 
 
