@@ -1,0 +1,18 @@
+<?xml version="1.0"?>  
+<!DOCTYPE mycat:schema SYSTEM "schema.dtd">  
+<mycat:schema xmlns:mycat="http://org.opencloudb/">  
+  
+    <schema name="TESTDB" checkSQLschema="false" sqlMaxLimit="100">  
+       <table name="student" dataNode="dn1"/>
+    </schema>  
+  
+    <dataNode name="dn1" dataHost="127.0.0.1" database="testdb" />  
+   
+  
+    <dataHost name="127.0.0.1" maxCon="1000" minCon="10" balance="1"  writeType="0" dbType="mysql" dbDriver="native">  
+	
+        <heartbeat>select user()</heartbeat>  
+        
+        <writeHost host="hostM1" url="127.0.0.1:3306" user="root" password="root"></writeHost>  
+    </dataHost>  
+</mycat:schema>  
