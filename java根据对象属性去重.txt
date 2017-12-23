@@ -1,0 +1,58 @@
+--实体类重写这两个方法
+
+@Override
+	public int hashCode() {
+		String in = name;  
+        return in.hashCode();
+	}
+	@Override
+	public boolean equals(Object obj) {
+		 Person s=(Person)obj;   
+	     return  name.equals(s.name);
+	}
+
+
+--测试类
+
+package com.pb.common;
+
+import java.util.ArrayList;
+import java.util.HashSet;
+import java.util.Iterator;
+import java.util.List;
+import java.util.Set;
+
+import com.pb.domain.Person;
+
+public class Test {
+
+	public static void main(String[] args) {
+		Person person = new Person();
+		person.setId("1");
+		person.setAge("22");
+		person.setName("zhangsan");
+		
+		Person person1 = new Person();
+		person1.setId("1");
+		person1.setAge("22");
+		person1.setName("zhangsan");
+		
+		List<Person> list = new ArrayList<Person>();
+		
+		list.add(person);
+		list.add(person1);
+		
+		
+		Set<Person> set = new HashSet<Person>();  
+        set.addAll(list);
+        Iterator<Person> it = set.iterator();
+        while(it.hasNext()){
+            Person person2 = it.next();
+            System.out.println("00000000");
+            System.out.println(person2.getName());
+        }
+        
+		
+	}
+
+}
