@@ -1,2 +1,5 @@
 git 新版本下载地址
 https://git-scm.com/downloads
+
+
+http://blog.csdn.net/java_sunofbeach/article/details/79374247
