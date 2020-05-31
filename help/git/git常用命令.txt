@@ -1,102 +1,104 @@
-°²×°Íê git ÒÔºó£º
+å®‰è£…å®Œ git ä»¥åï¼š
 
-1.³õÊ¼»¯ÓÃ»§ÃûºÍÓÊÏä£¨ÅäÖÃ±¾µØÓÃ»§Ãû ÓÊÏäµØÖ·£©£º
+1.åˆå§‹åŒ–ç”¨æˆ·åå’Œé‚®ç®±ï¼ˆé…ç½®æœ¬åœ°ç”¨æˆ·å é‚®ç®±åœ°å€ï¼‰ï¼š
 
-³õÊ¼»¯ÃüÁîÎª£ºgit config --global user.name "Research11"
+åˆå§‹åŒ–å‘½ä»¤ä¸ºï¼šgit config --global user.name "Research11"
 	      git config --global user.email "345303227@qq.com"
 
-2.µÚÒ»´Î²Ö¿â³õÊ¼»¯£ºmyproÄ¿Â¼ÏÂ:ÓÒ¼üÕÒµ½ GIT bash µ¯³öÃüÁîĞĞ´°¿Ú
+2.ç¬¬ä¸€æ¬¡ä»“åº“åˆå§‹åŒ–ï¼šmyproç›®å½•ä¸‹:å³é”®æ‰¾åˆ° GIT bash å¼¹å‡ºå‘½ä»¤è¡Œçª—å£
 
-ÔÚÃüÁîĞĞ´°¿ÚÇÃÈë£ºgit init »Ø³µ£¨´ËÊ±myproÎÄ¼ş¼ĞÏÂÃæ»á¶à³öÒ»¸ö.gitÎÄ¼ş£¬Õâ¾ÍÊÇ±¾µØ²Ö¿â£©
+åœ¨å‘½ä»¤è¡Œçª—å£æ•²å…¥ï¼šgit init å›è½¦ï¼ˆæ­¤æ—¶myproæ–‡ä»¶å¤¹ä¸‹é¢ä¼šå¤šå‡ºä¸€ä¸ª.gitæ–‡ä»¶ï¼Œè¿™å°±æ˜¯æœ¬åœ°ä»“åº“ï¼‰
 
-3.ÔÚmyproÎÄ¼ş¼ĞÀïÃæ´´½¨ÎÄ¼ş¼Ğ hello.java
-ÔÚÃüÁîĞĞ´°¿ÚÇÃÈë£ºgit add hello.java (¼ÓÈëµ½Ôİ´æÇø)
-Ö®ºóÔÙÔÚÃüÁîĞĞ´°¿ÚÇÃÈë£ºgit commit -m "×¢ÊÍÄÚÈİ"£¨´ËÊ±¾ÍÌá½»µ½ÁË±¾µØ²Ö¿â£©
+3.åœ¨myproæ–‡ä»¶å¤¹é‡Œé¢åˆ›å»ºæ–‡ä»¶å¤¹ hello.java
+åœ¨å‘½ä»¤è¡Œçª—å£æ•²å…¥ï¼šgit add hello.java (åŠ å…¥åˆ°æš‚å­˜åŒº)
+ä¹‹åå†åœ¨å‘½ä»¤è¡Œçª—å£æ•²å…¥ï¼šgit commit -m "æ³¨é‡Šå†…å®¹"ï¼ˆæ­¤æ—¶å°±æäº¤åˆ°äº†æœ¬åœ°ä»“åº“ï¼‰
 
-£¨±¾µØ²Ö¿â¾ÍÊÇ´ÅÅÌÉÏµÄÎÄ¼ş¼Ğ£©
+ï¼ˆæœ¬åœ°ä»“åº“å°±æ˜¯ç£ç›˜ä¸Šçš„æ–‡ä»¶å¤¹ï¼‰
 
-ËæÊ±¿ÉÒÔÓÃ£ºgit status ²é¿´ÄÇ×´Ì¬ git help ÊÇ°ïÖú
+éšæ—¶å¯ä»¥ç”¨ï¼šgit status æŸ¥çœ‹é‚£çŠ¶æ€ git help æ˜¯å¸®åŠ©
 
-Ê¹ÓÃgit bash ÃüÁîĞĞ£º
+ä½¿ç”¨git bash å‘½ä»¤è¡Œï¼š
 
 
-1.Éú³É¹«Ô¿Ë½Ô¿µÄÃüÁî£º
+1.ç”Ÿæˆå…¬é’¥ç§é’¥çš„å‘½ä»¤ï¼š
 
 ssh-keygen -t rsa -C "345303227@qq.com"  
-»Ø³µ-->Ö®ºó»áÑ¯ÎÊÌáÊ¾ÊäÈëÃÜÂë£¨Ä¬ÈÏ¼´¿É£©»Ø³µ  »Ø³µ
+å›è½¦-->ä¹‹åä¼šè¯¢é—®æç¤ºè¾“å…¥å¯†ç ï¼ˆé»˜è®¤å³å¯ï¼‰å›è½¦  å›è½¦
 
-Ö®ºó´ò¿ªgit hub½çÃæ ÔÚssh keys ÀïÃæÊäÈë¹«Ô¿´ËÊ±Ò²¾Í½¨Á¢ºÃÁËÁ´½Ó£¨ÅäÖÃÍê³É£©
+ä¹‹åæ‰“å¼€git hubç•Œé¢ åœ¨ssh keys é‡Œé¢è¾“å…¥å…¬é’¥æ­¤æ—¶ä¹Ÿå°±å»ºç«‹å¥½äº†é“¾æ¥ï¼ˆé…ç½®å®Œæˆï¼‰
 
-2.Ìí¼ÓÔ¶³Ì²Ö¿â
+2.æ·»åŠ è¿œç¨‹ä»“åº“
  
 
-3.Á´½Ó²Ö¿â
+3.é“¾æ¥ä»“åº“
 
-git remote add origin git@github.com:Research11/mldn.git »Ø³µ£¨´ËÊ±¾Í½¨Á¢ÁËÁ´½Ó£©
+git remote add origin git@github.com:Research11/mldn.git å›è½¦ï¼ˆæ­¤æ—¶å°±å»ºç«‹äº†é“¾æ¥ï¼‰
 
-git remote add origin https://github.com/Research11/mldn.git(Á´½ÓÔ¶³Ì²Ö¿â)
+git remote add origin https://github.com/Research11/mldn.git(é“¾æ¥è¿œç¨‹ä»“åº“)
 
-½«±¾µØ²Ö¿âÍÆËÍµ½git hub Ô¶³Ì²Ö¿âÉÏÃüÁîÈçÏÂ£º
-git push -u origin master »Ø³µ ÊäÈëÓÃ»§Ãû  ÊäÈëÃÜÂë »Ø³µ ¾Í³É¹¦ÍÆËÍµ½Ô¶³Ì²Ö¿âÁË
+å°†æœ¬åœ°ä»“åº“æ¨é€åˆ°git hub è¿œç¨‹ä»“åº“ä¸Šå‘½ä»¤å¦‚ä¸‹ï¼š
+git push -u origin master å›è½¦ è¾“å…¥ç”¨æˆ·å  è¾“å…¥å¯†ç  å›è½¦ å°±æˆåŠŸæ¨é€åˆ°è¿œç¨‹ä»“åº“äº†
 
 
 
-4.git³£ÓÃÃüÁî£º
+4.gitå¸¸ç”¨å‘½ä»¤ï¼š
 
-git add Ìí¼Óµ½Ôİ´æÇø
-git commit -m "×¢ÊÍ"Ìá½»µ½±¾µØ²Ö¿â
-git log hello.java ²é¿´ÈÕÖ¾
-git status ²é¿´µ±Ç°×´Ì¬
+git add æ·»åŠ åˆ°æš‚å­˜åŒº
+git commit -m "æ³¨é‡Š"æäº¤åˆ°æœ¬åœ°ä»“åº“
+git log hello.java æŸ¥çœ‹æ—¥å¿—
+git status æŸ¥çœ‹å½“å‰çŠ¶æ€
 git diff hell.java
-git add .Ìí¼ÓËùÓĞ
-git log --pretty=oneline ²éÑ¯µ±Ç°ĞŞ¸ÄºóµÄÈÕÖ¾ĞÅÏ¢
-git reset --hard HEAD~1 °æ±¾»ØÍËµ½ÉÏÒ»¸ö°æ±¾
-git reset --hard commit id(ÀıÈç£ºgit reset --hard a47db6a6cf60c417aaf3996ce17dcfc51de0d79f)
-»Ö¸´µ½×îºóÒ»´ÎÌá½»£¨ÊÇÕë¶Ô git reset hard HEAD~1¶øÑÔµÄ£©
-git checkout -- demo.java ÊÇÔÚÎÄ¼şÎ´Ìí¼ÓÎ´Ìá½»µÄÇé¿öÏÂĞŞ¸ÄÎÄ¼ş
-ÏÈgit reset HEAD demo.java ½Ó×Å git checkout -- demo.javaÊÇĞŞ¸ÄÎÄ¼şÒÑÌí¼Óµ«Î´Ìá½»µÄÊ±ºò
-git rm -- hello.java É¾³ıÎÄ¼ş²Ù×÷
-git reset --hard ÉÏÒ»¸ö°æ±¾µÄcommit id
-ÀıÈç£ºgit reset --hard a47db6a6cf60c417aaf3996ce17dcfc51de0d79f£¨É¾³ıºóµÄ»Ö¸´£©
+git add .æ·»åŠ æ‰€æœ‰
+git log --pretty=oneline æŸ¥è¯¢å½“å‰ä¿®æ”¹åçš„æ—¥å¿—ä¿¡æ¯
+git reset --hard HEAD~1 ç‰ˆæœ¬å›é€€åˆ°ä¸Šä¸€ä¸ªç‰ˆæœ¬
+git reset --hard commit id(ä¾‹å¦‚ï¼šgit reset --hard a47db6a6cf60c417aaf3996ce17dcfc51de0d79f)
+æ¢å¤åˆ°æœ€åä¸€æ¬¡æäº¤ï¼ˆæ˜¯é’ˆå¯¹ git reset hard HEAD~1è€Œè¨€çš„ï¼‰
+git checkout -- demo.java æ˜¯åœ¨æ–‡ä»¶æœªæ·»åŠ æœªæäº¤çš„æƒ…å†µä¸‹ä¿®æ”¹æ–‡ä»¶
+å…ˆgit reset HEAD demo.java æ¥ç€ git checkout -- demo.javaæ˜¯ä¿®æ”¹æ–‡ä»¶å·²æ·»åŠ ä½†æœªæäº¤çš„æ—¶å€™
+git rm -- hello.java åˆ é™¤æ–‡ä»¶æ“ä½œ
+git reset --hard ä¸Šä¸€ä¸ªç‰ˆæœ¬çš„commit id
+ä¾‹å¦‚ï¼šgit reset --hard a47db6a6cf60c417aaf3996ce17dcfc51de0d79fï¼ˆåˆ é™¤åçš„æ¢å¤ï¼‰
 
-²é¿´ÏÖÔÚÔ¶³Ì·şÎñÆ÷¶ËÒÑ¾­´æÔÚµÄ²Ö¿âĞÅÏ¢ÃüÁîÈçÏÂ£º
-git remote -v   »Ø³µ
+æŸ¥çœ‹ç°åœ¨è¿œç¨‹æœåŠ¡å™¨ç«¯å·²ç»å­˜åœ¨çš„ä»“åº“ä¿¡æ¯å‘½ä»¤å¦‚ä¸‹ï¼š
+git remote -v   å›è½¦
 
-±¾µØ²Ö¿â±»ĞŞ¸ÄÍ¬Ê±ÎÒÃÇÒªÌá½»µ½Ô¶³Ì²Ö¿âÊ±£º
+æœ¬åœ°ä»“åº“è¢«ä¿®æ”¹åŒæ—¶æˆ‘ä»¬è¦æäº¤åˆ°è¿œç¨‹ä»“åº“æ—¶ï¼š
 
-ÒªÏÈÖ´ĞĞ git commit -a -m "update file"  ÔÚÖ´ĞĞ git push origin master »Ø³µ ÊäÈëÓÃ»§ÃûÃÜÂë
+è¦å…ˆæ‰§è¡Œ git commit -a -m "update file"  åœ¨æ‰§è¡Œ git push origin master å›è½¦ è¾“å…¥ç”¨æˆ·åå¯†ç 
 
-¿ËÂ¡²Ö¿â£º£¨ÕıÈ·×ö·¨ÒªÏÈ¿ËÂ¡£©
+å…‹éš†ä»“åº“ï¼šï¼ˆæ­£ç¡®åšæ³•è¦å…ˆå…‹éš†ï¼‰
 git clone https://github.com/Research11/mldnback.git
 
 git add .
 
 git commit -m "test file"
 
-git push origin master »Ø³µ Ìí¼ÓÓÃ»§Ãû Research11 ÃÜÂë liuhb123
+git push origin master å›è½¦ æ·»åŠ ç”¨æˆ·å Research11 å¯†ç  liuhb123
 
-Ìá½»Íê³É £¨ÒÑ¾­ÍÆËÍµ½Ô¶³Ì²Ö¿â£©
+æäº¤å®Œæˆ ï¼ˆå·²ç»æ¨é€åˆ°è¿œç¨‹ä»“åº“ï¼‰
 
-5.git·ÖÖ§¹ÜÀí
+5.gitåˆ†æ”¯ç®¡ç†
  
-´´½¨·ÖÖ§  git branch brh
+åˆ›å»ºåˆ†æ”¯  git branch brh
 
-²é¿´·ÖÖ§ git branch
+æŸ¥çœ‹åˆ†æ”¯ git branch
 
-ÇĞ»»·ÖÖ§ git checkout brh
+æŸ¥çœ‹æ‰€æœ‰åˆ†æ”¯ git branch -a
 
-ÔÚ·ÖÖ§ÉÏĞŞ¸Ä´úÂëÒÔºó ÏÈÖ´ĞĞ git commit -a -m "×¢ÊÍ" ÔÚÖ´ĞĞ git push origin brh
+åˆ‡æ¢åˆ†æ”¯ git checkout brh
 
-´´½¨·ÖÖ§²¢ÇĞ»»  git checkout -b brh
+åœ¨åˆ†æ”¯ä¸Šä¿®æ”¹ä»£ç ä»¥å å…ˆæ‰§è¡Œ git commit -a -m "æ³¨é‡Š" åœ¨æ‰§è¡Œ git push origin brh
 
-É¾³ı·ÖÖ§ git branch -d brh  £¨Ö»»áÉ¾³ı±¾µØ·ÖÖ§£©
+åˆ›å»ºåˆ†æ”¯å¹¶åˆ‡æ¢  git checkout -b brh
 
-ºÏ²¢·ÖÖ§£º git merge brh £¨´ËÊ±Ö»ÊÇ±¾µØ²Ö¿âµÄmaster¸Ä±äÁË£¬Ô¶³Ì²Ö¿â²¢Ã»ÓĞ¸Ä±ä£©
-ºÏ²¢·ÖÖ§Ö®ºó mastÖ÷·ÖÖ§ËäÈ»¸Ä±ä  µ«ÊÇ²¢²»ÓÃÖ´ĞĞ git commit -a -m "×¢ÊÍ" ÃüÁî
-»¹ĞèÒª Ö´ĞĞ git push origin master ÍÆËÍµ½Ô¶³Ì²Ö¿â
+åˆ é™¤åˆ†æ”¯ git branch -d brh  ï¼ˆåªä¼šåˆ é™¤æœ¬åœ°åˆ†æ”¯ï¼‰
 
-£¨·ÖÖ§µÄÇĞ»»¾ÍÊÇ¾ÍÊÇ¸Ä±ä hardÖ¸ÕëµÄÖ¸Ïò£©
-É¾³ıÔ¶³Ì·ÖÖ§£º git push origin --delete brh
+åˆå¹¶åˆ†æ”¯ï¼š git merge brh ï¼ˆæ­¤æ—¶åªæ˜¯æœ¬åœ°ä»“åº“çš„masteræ”¹å˜äº†ï¼Œè¿œç¨‹ä»“åº“å¹¶æ²¡æœ‰æ”¹å˜ï¼‰
+åˆå¹¶åˆ†æ”¯ä¹‹å mastä¸»åˆ†æ”¯è™½ç„¶æ”¹å˜  ä½†æ˜¯å¹¶ä¸ç”¨æ‰§è¡Œ git commit -a -m "æ³¨é‡Š" å‘½ä»¤
+è¿˜éœ€è¦ æ‰§è¡Œ git push origin master æ¨é€åˆ°è¿œç¨‹ä»“åº“
+
+ï¼ˆåˆ†æ”¯çš„åˆ‡æ¢å°±æ˜¯å°±æ˜¯æ”¹å˜ hardæŒ‡é’ˆçš„æŒ‡å‘ï¼‰
+åˆ é™¤è¿œç¨‹åˆ†æ”¯ï¼š git push origin --delete brh
 
 
 http://pan.baidu.com/s/lhq3TeEK
